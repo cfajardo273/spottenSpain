@@ -3,9 +3,17 @@ import Airline from '../../models/airline.js';
 import { promises as fs } from 'fs';
 import path from 'path';
 import parse from 'csv-parse/lib/sync.js';
+import { databaseURI } from '../../index.js';
+import mongoose from 'mongoose';
 
 const airplanePath = path.resolve('./data/seeds/airplanes.csv');
 const airlinePath = path.resolve('./data/seeds/airlines.csv');
+
+mongoose.connect(databaseURI, {
+  useFindAndModify: false,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const getCsv = async (pathname) => {
   const csvContents = await fs.readFile(pathname, { encoding: 'utf-8' });
@@ -41,7 +49,23 @@ const start = async () => {
     return { ...airline, id: Number(airline.id) };
   });
 
-  console.log(airlineData);
+  Promise.all(
+    airplanesData.map(async (airplane) => {
+      const airplaneResource = await Airplane.create({ ...airplane });
+      console.log(
+        `The resource ${JSON.stringify(airplaneResource)} has been created`,
+      );
+    }),
+  );
+
+  Promise.all(
+    airlineData.map(async (airline) => {
+      const airlineResource = await Airline.create({ ...airline });
+      console.log(
+        `The resource ${JSON.stringify(airlineResource)} has been created`,
+      );
+    }),
+  );
 };
 
 start();
