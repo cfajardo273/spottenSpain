@@ -7,14 +7,13 @@ import parse from 'csv-parse/lib/sync.js';
 const airplanePath = path.resolve('./data/seeds/airplanes.csv');
 const airlinePath = path.resolve('./data/seeds/airlines.csv');
 
-console.log({ airplanePath });
-
 const getCsv = async (pathname) => {
   const csvContents = await fs.readFile(pathname, { encoding: 'utf-8' });
   return csvContents;
 };
 
 const start = async () => {
+  // Airplane
   const airplaneCsv = await getCsv(airplanePath);
 
   const airplanesRawData = parse(airplaneCsv, {
@@ -30,7 +29,19 @@ const start = async () => {
     };
   });
 
-  console.log(airplanesData);
+  // Airline
+  const airlineCsv = await getCsv(airlinePath);
+
+  const airlineRawData = parse(airlineCsv, {
+    columns: true,
+    skip_empty_lines: true,
+  });
+
+  const airlineData = airlineRawData.map((airline) => {
+    return { ...airline, id: Number(airline.id) };
+  });
+
+  console.log(airlineData);
 };
 
 start();
