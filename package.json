@@ -1,0 +1,15 @@
+{
+  "name": "spotter-spain",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pedro Martin",
+  "license": "MIT",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "dependencies": {
+    "lerna": "^3.22.1"
+  }
+}
