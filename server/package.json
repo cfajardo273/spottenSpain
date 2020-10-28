@@ -12,7 +12,9 @@
     "winston": "^3.3.3"
   },
   "scripts": {
-    "seed": "node ./data/seeds/index.js"
+    "seed": "node ./data/seeds/index.js",
+    "dev": "yarn nodemon ./index.js",
+    "start": "node ./index.js"
   },
   "type": "module"
 }

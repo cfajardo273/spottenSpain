@@ -7,6 +7,9 @@ import cors from 'cors';
 import httpLoggerMiddleware from './middleware/logger-middleware.js';
 import jsonResponseMiddleware from './middleware/json-response.js';
 
+// Routes
+import airplaneRouter from './routes/airplane.js';
+
 const HOST = '127.0.0.1';
 const PORT = 5000;
 export const databaseURI = 'mongodb://localhost/spotter-spain';
@@ -27,6 +30,8 @@ server.use(bodyParser.json());
 server.use(httpLoggerMiddleware);
 // Utiliza un middleware que permite crear headers de respuesta que indiquen que el contenido es JSON
 server.use(jsonResponseMiddleware);
+
+server.use(airplaneRouter);
 
 // Inicializa el servidor
 server.listen(PORT, () =>

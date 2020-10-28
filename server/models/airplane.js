@@ -13,4 +13,12 @@ const airplaneSchema = new mongoose.Schema(
 
 const Airplane = mongoose.model('Airplane', airplaneSchema);
 
+export const getAllAirplanes = async () => {
+  try {
+    return await Airplane.find();
+  } catch (error) {
+    throw error;
+  }
+};
+
 export default Airplane;
