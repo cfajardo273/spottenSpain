@@ -17,12 +17,20 @@ const getCsv = async (pathname) => {
 const start = async () => {
   const airplaneCsv = await getCsv(airplanePath);
 
-  const records = parse(airplaneCsv, {
+  const airplanesRawData = parse(airplaneCsv, {
     columns: true,
     skip_empty_lines: true,
   });
 
-  console.log({ records });
+  const airplanesData = airplanesRawData.map((airplane) => {
+    return {
+      ...airplane,
+      id: Number(airplane.id),
+      id_airplane: Number(airplane.id_airplane),
+    };
+  });
+
+  console.log(airplanesData);
 };
 
 start();
