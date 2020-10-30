@@ -1,18 +1,15 @@
-//import { request, response } from 'express';
 import {
   getAllAirlines,
   getAirlineById,
   putAirlineById,
   postAirline,
-  updateAirline,
+  deleteAirlineResource,
 } from '../models/airline.js';
 
 export const ListAllAirlines = async (request, response) => {
   try {
     const airlines = await getAllAirlines();
-    return response.status(200).send({
-      airlines,
-    });
+    return response.status(200).send(airlines);
   } catch (error) {
     const { message } = error;
     return response.status(500).send({
@@ -27,9 +24,7 @@ export const getResourceAirlineById = async (request, response) => {
   } = request;
   try {
     const airline = await getAirlineById(id);
-    response.status(200).send({
-      airline,
-    });
+    response.status(200).send(airline);
   } catch (error) {
     const { message } = error;
     response.status(500).send({
@@ -41,13 +36,13 @@ export const getResourceAirlineById = async (request, response) => {
 export const putResourceAirlineById = async (request, response) => {
   const {
     params: { id },
+    body,
   } = request;
   try {
-    const airline = await putAirlineById(id);
-    response.status(200).send({
-      airline,
-    });
+    const airline = await putAirlineById(id, body);
+    response.status(200).send(airline);
   } catch (error) {
+    const { message } = error;
     response.status(500).send({
       message,
     });
@@ -58,9 +53,7 @@ export const postResourceAirline = async (request, response) => {
   const { body } = request;
   try {
     const newAirline = await postAirline(body);
-    return response.status(201).send({
-      newAirline,
-    });
+    return response.status(201).send(newAirline);
   } catch (error) {
     const { message } = error;
     return response.status(500).send({
@@ -69,16 +62,22 @@ export const postResourceAirline = async (request, response) => {
   }
 };
 
-export const updateResourceAirline = async (request, response) => {
-  const { id, ...data } = request;
+export const deleteResourceAirline = async (request, response) => {
+  // we get access to the data sent it by the client
+  const {
+    params: { id },
+  } = request;
+
   try {
-    const updateAirline = await updateAirline(id, ...data);
+    // Called a function that is declared in the resource model
+    const deleteMessage = await deleteAirlineResource(id);
     return response.status(200).send({
-      updateAirplane,
+      message: deleteMessage,
     });
   } catch (error) {
+    // if resource is not found send error message
     const { message } = error;
-    return response.status(500).send({
+    return response.status(404).send({
       message,
     });
   }

@@ -4,7 +4,7 @@ import {
   getResourceAirlineById,
   putResourceAirlineById,
   postResourceAirline,
-  updateResourceAirline,
+  deleteResourceAirline,
 } from '../controllers/airline.js';
 
 const airlineRouter = express.Router();
@@ -13,6 +13,6 @@ airlineRouter.get('/airline', ListAllAirlines);
 airlineRouter.get('/airline/:id', getResourceAirlineById);
 airlineRouter.put('/airline/:id', putResourceAirlineById);
 airlineRouter.post('/airline', postResourceAirline);
-airlineRouter.update('/airline/', updateResourceAirline);
+airlineRouter.delete('/airline/:id', deleteResourceAirline);
 
 export default airlineRouter;

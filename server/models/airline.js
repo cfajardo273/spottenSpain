@@ -20,7 +20,7 @@ export const getAllAirlines = async () => {
   }
 };
 
-export const getAirlinById = async (id) => {
+export const getAirlineById = async (id) => {
   try {
     return await Airline.findById(id);
   } catch (error) {
@@ -28,9 +28,9 @@ export const getAirlinById = async (id) => {
   }
 };
 
-export const putAirlineById = async (id) => {
+export const putAirlineById = async (id, data) => {
   try {
-    return await Airline.findById(id);
+    return await Airline.findByIdAndUpdate(id, { ...data });
   } catch (error) {
     throw error;
   }
@@ -44,12 +44,12 @@ export const postAirline = async (data) => {
   }
 };
 
-export const updateAirline = async (id, data) => {
+export const deleteAirlineResource = async (id) => {
   try {
-    return await Airlane.findById(id, ...data);
+    return await Airline.findByIdAndDelete(id);
   } catch (error) {
-    throw error;
+    throw new Error(error);
   }
 };
-  
+
 export default Airline;

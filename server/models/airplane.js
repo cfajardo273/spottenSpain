@@ -29,14 +29,6 @@ export const getAirplaneById = async (id) => {
   }
 };
 
-export const putAirplaneById = async (id) => {
-  try {
-    return await Airplane.findById(id);
-  } catch (error) {
-    throw error;
-  }
-};
-
 export const postAirplane = async (data) => {
   try {
     return await Airplane.create({ ...data });
@@ -47,9 +39,17 @@ export const postAirplane = async (data) => {
 
 export const updateAirplane = async (id, data) => {
   try {
-    return await Airplane.findById(id, ...data);
+    return await Airplane.findByIdAndUpdate(id, { ...data });
   } catch (error) {
     throw error;
+  }
+};
+
+export const deleteAirplane = async (id) => {
+  try {
+    return await Airplane.findByIdAndDelete(id);
+  } catch (error) {
+    throw new Error(error);
   }
 };
 
