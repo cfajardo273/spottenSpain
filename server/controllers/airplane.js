@@ -3,7 +3,7 @@ import {
   getAllAirplanes,
   getAirplaneById,
   putAirplaneById,
-  postAirplaneById,
+  postAirplane,
 } from '../models/airplane.js';
 
 export const ListAirplanes = async (request, response) => {
@@ -54,18 +54,16 @@ export const putResourceAriplaneById = async (request, response) => {
   }
 };
 
-export const postResourceAirplaneById = async (request, response) => {
-  const {
-    params: { id },
-  } = request;
+export const postResourceAirplane = async (request, response) => {
+  const { body } = request;
   try {
-    const airplane = await postAirplaneById(id);
-    response.status(200).send({
-      airplane,
+    const newAirplane = await postAirplane(body);
+    return response.status(201).send({
+      newAirplane,
     });
   } catch (error) {
     const { message } = error;
-    response.status(500).send({
+    return response.status(500).send({
       message,
     });
   }
