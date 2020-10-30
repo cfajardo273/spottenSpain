@@ -20,4 +20,15 @@ export const getAllAirlines = async () => {
   }
 };
 
+export const createAirLineResource = async (data) => {
+
+  try {
+
+    return await airline.create({ ...data });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+
 export default Airline;
