@@ -29,6 +29,7 @@ export const getAirplaneById = async (id) => {
   }
 };
 
+
 export const putAirplaneById = async (id) => {
   try {
     return await Airplane.findById(id);

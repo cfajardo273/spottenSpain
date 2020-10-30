@@ -35,6 +35,7 @@ export const getResourceAirplaneById = async (request, response) => {
       message,
     });
   }
+
 };
 
 export const putResourceAriplaneById = async (request, response) => {
@@ -70,5 +71,6 @@ export const postResourceAirplaneById = async (request, response) => {
     });
   }
 };
+
 
 
