@@ -13,3 +13,4 @@ airplaneRouter.get('/airplane/:id', getResourceAirplaneById);
 airplaneRouter.put('/airplane/:id', putResourceAriplaneById);
 airplaneRouter.post('/airplane', postResourceAirplane);
 export default airplaneRouter;
+
