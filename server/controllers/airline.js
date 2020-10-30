@@ -1,12 +1,10 @@
 //import { request, response } from 'express';
-import { request, response } from 'express';
 import {
   getAllAirlines,
   getAirlineById,
   putAirlineById,
   postAirline,
   updateAirline,
-
 } from '../models/airline.js';
 
 export const ListAllAirlines = async (request, response) => {

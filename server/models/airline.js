@@ -44,5 +44,12 @@ export const postAirline = async (data) => {
   }
 };
 
+export const updateAirline = async (id, data) => {
+  try {
+    return await Airlane.findById(id, ...data);
+  } catch (error) {
+    throw error;
+  }
+};
   
 export default Airline;

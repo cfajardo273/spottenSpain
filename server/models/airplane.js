@@ -45,4 +45,12 @@ export const postAirplane = async (data) => {
   }
 };
 
+export const updateAirplane = async (id, data) => {
+  try {
+    return await Airplane.findById(id, ...data);
+  } catch (error) {
+    throw error;
+  }
+};
+
 export default Airplane;
