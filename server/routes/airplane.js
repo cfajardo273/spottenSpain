@@ -2,21 +2,17 @@ import express from 'express';
 import {
   ListAirplanes,
   getResourceAirplaneById,
-  putResourceAriplaneById,
-  postResourceAirplane,
   updateResourceAirplane,
+  postResourceAirplane,
+  deleteResourceAirplane,
 } from '../controllers/airplane.js';
-import airlineRouter from './airline.js';
 
 const airplaneRouter = express.Router();
 
 airplaneRouter.get('/airplane', ListAirplanes);
 airplaneRouter.get('/airplane/:id', getResourceAirplaneById);
-airplaneRouter.put('/airplane/:id', putResourceAriplaneById);
+airplaneRouter.put('/airplane/:id', updateResourceAirplane);
 airplaneRouter.post('/airplane', postResourceAirplane);
+airplaneRouter.delete('/airplane/:id', deleteResourceAirplane);
 
-airlineRouter.update('/airplane', updateResourceAirplane);
 export default airplaneRouter;
-export default airplaneRouter;
-
-
