@@ -21,4 +21,28 @@ export const getAllAirplanes = async () => {
   }
 };
 
+export const getAirplaneById = async (id) => {
+  try {
+    return await Airplane.findById(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putAirplaneById = async (id) => {
+  try {
+    return await Airplane.findById(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const postAirplaneById = async (id) => {
+  try {
+    return await Airplane.findById(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
 export default Airplane;
