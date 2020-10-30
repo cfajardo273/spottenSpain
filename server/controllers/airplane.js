@@ -1,5 +1,4 @@
 //import { request, response } from 'express';
-import { request, response } from 'express';
 import {
   getAllAirplanes,
   getAirplaneById,
