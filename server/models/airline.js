@@ -20,4 +20,29 @@ export const getAllAirlines = async () => {
   }
 };
 
+export const getAirlinById = async (id) => {
+  try {
+    return await Airline.findById(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const putAirlineById = async (id) => {
+  try {
+    return await Airline.findById(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const postAirline = async (data) => {
+  try {
+    return await Airline.create({ ...data });
+  } catch (error) {
+    throw error;
+  }
+};
+
+  
 export default Airline;

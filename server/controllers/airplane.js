@@ -1,9 +1,11 @@
 //import { request, response } from 'express';
+import { request, response } from 'express';
 import {
   getAllAirplanes,
   getAirplaneById,
   putAirplaneById,
   postAirplane,
+  updateAirplane,
 } from '../models/airplane.js';
 
 export const ListAirplanes = async (request, response) => {
@@ -69,4 +71,17 @@ export const postResourceAirplane = async (request, response) => {
   }
 };
 
-
+export const updateResourceAirplane = async (request, response) => {
+  const { id, ...data } = request;
+  try {
+    const updateAirplane = await updateAirplane(id, ...data);
+    return response.status(200).send({
+      updateAirplane,
+    });
+  } catch (error) {
+    const { message } = error;
+    return response.status(500).send({
+      message,
+    });
+  }
+};
