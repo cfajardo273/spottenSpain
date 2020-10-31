@@ -1,8 +1,11 @@
 //import { request, response } from 'express';
 import {
-  createAirPlaneResource,
+
   getAllAirplanes,
   getAirplaneById,
+  putAirplaneById,
+  postAirplane,
+
 } from '../models/airplane.js';
 
 export const ListAirplanes = async (request, response) => {
@@ -36,17 +39,36 @@ export const getResourceAirplaneById = async (request, response) => {
   }
 };
 
-
-export const createAirPlane = async (request, response) => {
-  const { body } = request;
-
+export const putResourceAriplaneById = async (request, response) => {
+  const {
+    params: { id },
+  } = request;
   try {
-
-    const newAirPlaneResource = await createAirPlaneResource(body);
-    return response.status(201).send(newAirPlaneResource);
+    const airplane = await putAirplaneById(id);
+    response.status(200).send({
+      airplane,
+    });
   } catch (error) {
-    return response.status(500).send({
-      message: `Error: not connection to database, ${error}.`,
+    const { message } = error;
+    response.status(500).send({
+      message,
     });
   }
 };
+
+export const postResourceAirplane = async (request, response) => {
+  const { body } = request;
+  try {
+    const newAirplane = await postAirplane(body);
+    return response.status(201).send({
+      newAirplane,
+    });
+  } catch (error) {
+    const { message } = error;
+    return response.status(500).send({
+      message,
+    });
+  }
+};
+
+
