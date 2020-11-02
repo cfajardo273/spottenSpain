@@ -4,8 +4,11 @@ const Header = () => {
   return (
     <header>
       <h1>Spotter Spain 🇪🇸</h1>
-      <p><italic>¡Nuestra afición es fotografiar los nuevos modelos de aviones, descubrir pinturas extravagantes en las aeronaves,
-           visitas compañías en un aeropuerto…, <bold>Somos Spotter, cazadores de aviones!</bold>!</italic></p>
+      <p>
+        ¡Nuestra afición es fotografiar los nuevos modelos de aviones, descubrir
+        pinturas extravagantes en las aeronaves, visitas compañías en un
+        aeropuerto…, <span>Somos Spotter, cazadores de aviones!</span>!
+      </p>
     </header>
   );
 };

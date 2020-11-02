@@ -15,7 +15,7 @@ const AirplaneList = () => {
 
   return (
     <main>
-      <h2>Lista de caviones</h2>
+      <h2>Lista de aviones</h2>
       <ul>
         {aiplanes.map((airplane) => {
           return <li key={airplane._id}>{airplane.airplane}</li>;

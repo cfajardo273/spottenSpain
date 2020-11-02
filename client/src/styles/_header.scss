@@ -1,3 +1,13 @@
-h1{
-  text-align: center;
- }
+header {
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    font-style: italic;
+    span {
+      font-style: normal;
+      font-weight: bold;
+    }
+  }
+}
