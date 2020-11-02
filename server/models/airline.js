@@ -20,13 +20,6 @@ export const getAllAirlines = async () => {
   }
 };
 
-<<<<<<< HEAD
-export const createAirLineResource = async (data) => {
-
-  try {
-
-    return await airline.create({ ...data });
-=======
 export const getAirlineById = async (id) => {
   try {
     return await Airline.findById(id);
@@ -54,14 +47,9 @@ export const postAirline = async (data) => {
 export const deleteAirlineResource = async (id) => {
   try {
     return await Airline.findByIdAndDelete(id);
->>>>>>> 6f31178c7e62778e97c51881ba28c85c6bcb54e2
   } catch (error) {
     throw new Error(error);
   }
 };
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6f31178c7e62778e97c51881ba28c85c6bcb54e2
 export default Airline;

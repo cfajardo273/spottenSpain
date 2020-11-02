@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { createAirLineResource, getAllAirlines } from '../models/airline.js';
-=======
 import {
   getAllAirlines,
   getAirlineById,
@@ -8,7 +5,6 @@ import {
   postAirline,
   deleteAirlineResource,
 } from '../models/airline.js';
->>>>>>> 6f31178c7e62778e97c51881ba28c85c6bcb54e2
 
 export const ListAllAirlines = async (request, response) => {
   try {
@@ -66,19 +62,6 @@ export const postResourceAirline = async (request, response) => {
   }
 };
 
-<<<<<<< HEAD
-
-export const createAirLine = async (request, response) => {
-  const { body } = request;
-
-  try {
-
-    const newAirLineResource = await createAirLineResource(body);
-    return response.status(201).send(newAirLineResource);
-  } catch (error) {
-    return response.status(500).send({
-      message: `Error: not connection to database, ${error}.`,
-=======
 export const deleteResourceAirline = async (request, response) => {
   // we get access to the data sent it by the client
   const {
@@ -96,7 +79,6 @@ export const deleteResourceAirline = async (request, response) => {
     const { message } = error;
     return response.status(404).send({
       message,
->>>>>>> 6f31178c7e62778e97c51881ba28c85c6bcb54e2
     });
   }
 };
