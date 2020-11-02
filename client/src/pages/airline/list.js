@@ -15,7 +15,7 @@ const ListAirlines = () => {
 
   return (
     <main>
-      <h2>Lista de Lineas areas</h2>
+      <h2>Lista de líneas aéreas</h2>
       <ul>
         {airlines.map((airline) => {
           return <li key={airline._id}>{airline.airline_name}</li>;

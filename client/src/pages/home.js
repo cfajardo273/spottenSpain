@@ -1,9 +1,16 @@
 const Home = () => {
   return (
-    <main>
-      <h2>Home</h2>
-      <a href="/airplanes">Lista de Aviones</a>
-      <a href="/airlines">Lista de Lineas areas</a>
+    <main className="home">
+      <nav>
+        <ul>
+          <li>
+            <a href="/airplanes">Lista de aviones</a>
+          </li>
+          <li>
+            <a href="/airlines">Lista de líneas aéreas</a>
+          </li>
+        </ul>
+      </nav>
     </main>
   );
 };
