@@ -11,3 +11,35 @@ header {
     }
   }
 }
+
+.airline {
+  background-image: url(../images/airline.jpg);
+  background-repeat: no-repeat;
+  background-size: 2550px;;
+  columns: 2;
+  padding-bottom: 250px;
+  padding-top: 200px;
+  padding-left: 100px;
+  color: white;  
+}
+
+.airplane {
+  background-image: url(../images/airplane.jpg);
+  background-repeat: no-repeat;
+  background-size: 2550px;;
+  columns: 3;
+  padding-bottom: 250px;
+  padding-top: 200px;
+  padding-left: 100px;
+  color: white; 
+}
+
+.home {
+  background-image: url(../images/home.jpg);
+  background-repeat: no-repeat;
+  background-size: 2550px;;
+  padding-bottom: 950px;
+  padding-top: 200px;
+  padding-left: 100px;
+  color: white; 
+}

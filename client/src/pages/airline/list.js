@@ -14,8 +14,16 @@ const ListAirlines = () => {
   }, []);
 
   return (
-    <main>
-      <h2>Lista de líneas aéreas</h2>
+    <main className="airline">
+      <ul>
+        <li>
+          <a href="../airplanes">Lista de aviones</a>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+      </ul>
+      <h2>Lista de Líneas Aéreas</h2>
       <ul>
         {airlines.map((airline) => {
           return <li key={airline._id}>{airline.airline_name}</li>;
