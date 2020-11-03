@@ -11,5 +11,8 @@
   ],
   "dependencies": {
     "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "start": "yarn workspace server start"
   }
 }
