@@ -14,7 +14,15 @@ const AirplaneList = () => {
   }, []);
 
   return (
-    <main>
+    <main className="airplane">
+      <ul>
+        <li>
+          <a href="../airlines">Lista de compañias aéreas</a>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+      </ul>
       <h2>Lista de aviones</h2>
       <ul>
         {aiplanes.map((airplane) => {
