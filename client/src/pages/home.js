@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <main className="home">
-        <nav>
+      <nav>
         <ul>
           <li>
             <a href="/airplanes">Lista de aviones</a>
