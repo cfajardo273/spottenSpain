@@ -1,71 +1,91 @@
-.airlines {
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    max-width: 33%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
+.airline {
+  background-image: url(../images/airline.jpg);
+  background-repeat: no-repeat;
+  background-size: 2550px;
+  padding-bottom: 250px;
+  padding-top: 200px;
+  padding-left: 100px;
+  color: white;
 
-  li {
-    flex-basis: 33%;
-  }
-
-  a {
-    color: white;
-    display: block;
-    background-color: black;
-    border: 1px solid black;
-    padding: 0.25rem;
-    text-align: center;
-    font-size: 1.15rem;
-    font-family: sans-serif;
-    transition: all ease 0.2s;
-    &:active {
-      color: black;
-      background-color: white;
+  nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      max-width: 33%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
     }
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(0, 0, 0, 0.7);
+
+    li {
+      flex-basis: 33%;
+    }
+
+    a {
+      color: white;
+      display: block;
+      background-color: black;
+      border: 1px solid black;
+      padding: 0.25rem;
+      text-align: center;
+      font-size: 1.15rem;
+      font-family: sans-serif;
+      transition: all ease 0.2s;
+      &:active {
+        color: black;
+        background-color: white;
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.7);
+      }
     }
   }
 }
 
-.airplanes {
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    max-width: 33%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-  }
+.airplane {
+  background-image: url(../images/airplane.jpg);
+  background-repeat: no-repeat;
+  background-size: 2550px;
+  padding-bottom: 250px;
+  padding-top: 200px;
+  padding-left: 100px;
+  color: white;
 
-  li {
-    flex-basis: 33%;
-  }
-
-  a {
-    color: white;
-    display: block;
-    background-color: black;
-    border: 1px solid black;
-    padding: 0.25rem;
-    text-align: center;
-    font-size: 1.15rem;
-    font-family: sans-serif;
-    transition: all ease 0.2s;
-    &:active {
-      color: black;
-      background-color: white;
+  nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      max-width: 33%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
     }
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(0, 0, 0, 0.7);
+
+    li {
+      flex-basis: 33%;
+    }
+
+    a {
+      color: white;
+      display: block;
+      background-color: black;
+      border: 1px solid black;
+      padding: 0.25rem;
+      text-align: center;
+      font-size: 1.15rem;
+      font-family: sans-serif;
+      transition: all ease 0.2s;
+      &:active {
+        color: black;
+        background-color: white;
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.7);
+      }
     }
   }
 }
